@@ -1,4 +1,3 @@
-import Center from "components/common/Center";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import { ThemeProvider } from "styled-components";
@@ -13,9 +12,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Center>
-          <Component {...pageProps} />
-        </Center>
+        <Component {...pageProps} />
       </ThemeProvider>
     </>
   );

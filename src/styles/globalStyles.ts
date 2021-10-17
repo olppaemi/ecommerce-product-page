@@ -20,6 +20,11 @@ const globalStyle = css`
     appearance: none;
     cursor: pointer;
   }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 `;
 
 const typography = css`
@@ -57,6 +62,22 @@ const typography = css`
     font-size: ${rem(16)};
     line-height: ${rem(26)};
     color: ${({ theme }) => theme.colors.darkGrayishBlue};
+  }
+
+  nav {
+    font-size: ${rem(15)};
+
+    li {
+      &:hover {
+        color: ${({ theme }) => theme.colors.veryVarkBlue};
+      }
+    }
+
+    @media (max-width: ${media.md}) {
+      font-size: ${rem(18)};
+      font-weight: bold;
+      color: ${({ theme }) => theme.colors.veryVarkBlue};
+    }
   }
 `;
 
