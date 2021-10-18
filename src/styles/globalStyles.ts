@@ -84,6 +84,12 @@ const typography = css`
     font-size: ${rem(16)};
     line-height: ${rem(26)};
     color: ${({ theme }) => theme.colors.darkGrayishBlue};
+
+    @media (max-width: ${media.md}) {
+      font-size: ${rem(15)};
+      line-height: ${rem(25)};
+      letter-spacing: 0;
+    }
   }
 
   nav {

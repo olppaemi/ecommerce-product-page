@@ -45,10 +45,11 @@ export const Thumbnails = styled.ul`
 export const Thumbnail = styled.li<{ $selected: boolean }>`
   cursor: pointer;
   position: relative;
+  width: ${rem(88)};
+  height: ${rem(88)};
 
   img {
-    width: ${rem(88)};
-    height: ${rem(88)};
+    width: 100%;
     border-radius: ${rem(10)};
   }
 

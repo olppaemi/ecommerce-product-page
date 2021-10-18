@@ -2,18 +2,18 @@ import Close from "components/icons/Close";
 import Next from "components/icons/Next";
 import Previous from "components/icons/Previous";
 import { useEffect, useState } from "react";
-import images from "lib/data.json";
+import shoes from "lib/data.json";
 import * as S from "./styles";
 
 const ThumbnailsPortal = ({ closeModal }: { closeModal(): void }) => {
   const [index, setIndex] = useState(0);
 
   const handlePrev = () => {
-    setIndex((i) => (i > 0 ? i - 1 : images.length - 1));
+    setIndex((i) => (i > 0 ? i - 1 : shoes.length - 1));
   };
 
   const handleNext = () => {
-    setIndex((i) => (i < images.length - 1 ? i + 1 : 0));
+    setIndex((i) => (i < shoes.length - 1 ? i + 1 : 0));
   };
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const ThumbnailsPortal = ({ closeModal }: { closeModal(): void }) => {
         <Close />
       </S.CloseIcon>
       <S.ImageContainer>
-        <img src={images[index].image} alt="product image" />
+        <img src={shoes[index].image} alt="product image" />
         <S.PrevButton onClick={handlePrev}>
           <Previous />
         </S.PrevButton>
@@ -52,7 +52,7 @@ const ThumbnailsPortal = ({ closeModal }: { closeModal(): void }) => {
         </S.NextButton>
       </S.ImageContainer>
       <S.Thumbnails>
-        {images.map((image, i) => (
+        {shoes.map((image, i) => (
           <S.Thumbnail
             key={i}
             onClick={() => setIndex(i)}
