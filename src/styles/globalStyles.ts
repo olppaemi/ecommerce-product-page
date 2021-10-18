@@ -12,6 +12,10 @@ const globalStyle = css`
     box-sizing: border-box;
   }
 
+  body {
+    min-height: 100vh;
+  }
+
   button {
     font-family: inherit;
     font-size: inherit;
@@ -46,15 +50,24 @@ const typography = css`
     font-weight: bold;
     line-height: ${rem(48)};
     letter-spacing: 0;
+    color: ${({ theme }) => theme.colors.veryVarkBlue};
   }
 
   h3 {
     font-size: ${rem(13)};
     font-weight: bold;
     line-height: 100%;
-    transform: uppercase;
+    text-transform: uppercase;
     letter-spacing: ${rem(2)};
     color: ${({ theme }) => theme.colors.orange};
+  }
+
+  h4 {
+    font-size: ${rem(16)};
+    font-weight: bold;
+    line-height: ${rem(26)};
+    color: ${({ theme }) => theme.colors.grayishBlue};
+    text-decoration: line-through;
   }
 
   body {

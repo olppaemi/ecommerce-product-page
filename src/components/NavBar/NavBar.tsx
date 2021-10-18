@@ -6,9 +6,12 @@ import Menu from "components/icons/Menu";
 import Cart from "components/icons/Cart";
 import NavList from "./NavList";
 import Center from "components/common/Center";
+import useMobile from "hooks/useMobile";
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const isMobile = useMobile();
+
   const openMenu = () => setShowMenu(true);
   const closeMenu = () => setShowMenu(false);
 
@@ -16,9 +19,11 @@ const NavBar = () => {
     <Center>
       <S.NavBar>
         <S.Nav>
-          <S.MenuIcon onClick={openMenu}>
-            <Menu />
-          </S.MenuIcon>
+          {isMobile && (
+            <S.MenuIcon onClick={openMenu}>
+              <Menu />
+            </S.MenuIcon>
+          )}
 
           <Link href="/">
             <a>

@@ -15,6 +15,8 @@ export const NavBar = styled.div`
 
   @media (max-width: ${media.md}) {
     border-bottom: none;
+    padding-top: ${rem(20)};
+    padding-bottom: ${rem(28)};
   }
 `;
 
@@ -27,12 +29,8 @@ export const Cart = styled.div`
 `;
 
 export const MenuIcon = styled.div`
-  display: none;
-  @media (max-width: ${media.md}) {
-    display: block;
-    margin-right: ${rem(16)};
-    cursor: pointer;
-  }
+  margin-right: ${rem(16)};
+  cursor: pointer;
 `;
 
 export const Status = styled.div`
@@ -48,6 +46,12 @@ export const Status = styled.div`
       margin-left: ${rem(32)};
     }
   }
+
+  @media (max-width: ${media.md}) {
+    & > * + * {
+      margin-left: ${rem(22)};
+    }
+  }
 `;
 
 export const Profile = styled.div`
@@ -59,6 +63,13 @@ export const Profile = styled.div`
 
     &:hover {
       border: 2px solid ${({ theme }) => theme.colors.orange};
+    }
+  }
+
+  @media (max-width: ${media.md}) {
+    img {
+      width: ${rem(28)};
+      height: ${rem(28)};
     }
   }
 `;
