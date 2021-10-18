@@ -16,6 +16,12 @@ export const CloseIcon = styled.div`
     path {
       fill: white;
     }
+
+    &:hover {
+      path {
+        fill: ${({ theme }) => theme.colors.orange};
+      }
+    }
   }
 `;
 
@@ -38,6 +44,7 @@ export const Thumbnails = styled.ul`
 
 export const Thumbnail = styled.li<{ $selected: boolean }>`
   cursor: pointer;
+  position: relative;
 
   img {
     width: ${rem(88)};
@@ -45,10 +52,24 @@ export const Thumbnail = styled.li<{ $selected: boolean }>`
     border-radius: ${rem(10)};
   }
 
+  &:hover {
+    &::after {
+      display: block;
+      content: "";
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: ${rem(88)};
+      height: ${rem(88)};
+      background-color: rgb(255, 255, 255, 0.75);
+      border-radius: ${rem(10)};
+    }
+  }
+
   ${({ $selected }) =>
     $selected &&
     css`
-      position: relative;
       &::after {
         display: block;
         content: "";
@@ -60,6 +81,7 @@ export const Thumbnail = styled.li<{ $selected: boolean }>`
         height: ${rem(88)};
         background-color: rgb(255, 255, 255, 0.75);
         border-radius: ${rem(10)};
+        border: 2px solid ${({ theme }) => theme.colors.orange};
       }
     `}
 `;
@@ -75,6 +97,12 @@ const Button = styled.button`
 
   position: absolute;
   top: calc(50% - ${rem(28)});
+
+  &:hover {
+    svg path {
+      stroke: ${({ theme }) => theme.colors.orange};
+    }
+  }
 `;
 
 export const PrevButton = styled(Button)`
