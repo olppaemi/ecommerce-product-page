@@ -3,21 +3,20 @@ import Link from "next/link";
 import * as S from "./styles";
 
 const NavList = ({
-  mobile,
+  showMenu,
   closeMenu,
 }: {
-  mobile: boolean;
+  showMenu: boolean;
   closeMenu(): void;
 }) => {
   return (
-    <S.Container>
+    <S.Container $showMenu={showMenu}>
       <S.Background onClick={closeMenu} />
       <S.NavContainer>
-        {mobile && (
-          <S.CloseIcon onClick={closeMenu}>
-            <Close />
-          </S.CloseIcon>
-        )}
+        <S.CloseIcon onClick={closeMenu}>
+          <Close />
+        </S.CloseIcon>
+
         <S.NavList>
           <S.NavItem onClick={closeMenu}>
             <Link href="/">

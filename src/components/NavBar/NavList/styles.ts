@@ -2,7 +2,11 @@ import styled from "styled-components";
 import media from "styles/media";
 import { rem } from "styles/utils";
 
-export const Container = styled.div``;
+export const Container = styled.div<{ $showMenu: boolean }>`
+  @media (max-width: ${media.md}) {
+    display: ${({ $showMenu }) => ($showMenu ? "block" : "none")};
+  }
+`;
 
 export const Background = styled.div`
   @media (max-width: ${media.md}) {
@@ -16,7 +20,12 @@ export const Background = styled.div`
 `;
 
 export const CloseIcon = styled.div`
-  cursor: pointer;
+  display: none;
+
+  @media (max-width: ${media.md}) {
+    display: block;
+    cursor: pointer;
+  }
 `;
 
 export const NavContainer = styled.div`

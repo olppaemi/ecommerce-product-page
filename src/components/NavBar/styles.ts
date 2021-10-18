@@ -27,8 +27,12 @@ export const Cart = styled.div`
 `;
 
 export const MenuIcon = styled.div`
-  margin-right: ${rem(16)};
-  cursor: pointer;
+  display: none;
+  @media (max-width: ${media.md}) {
+    display: block;
+    margin-right: ${rem(16)};
+    cursor: pointer;
+  }
 `;
 
 export const Status = styled.div`
