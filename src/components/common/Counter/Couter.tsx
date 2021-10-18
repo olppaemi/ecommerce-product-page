@@ -1,3 +1,5 @@
+import Minus from "components/icons/Minus";
+import Plus from "components/icons/Plus";
 import { useState } from "react";
 import * as S from "./styles";
 
@@ -9,9 +11,15 @@ const Couter = () => {
 
   return (
     <S.Counter>
-      <S.Minus onClick={minus}>-</S.Minus>
+      <S.Minus onClick={minus}>
+        <span className="a11y-hidden">-</span>
+        <Minus />
+      </S.Minus>
       <S.Number>{number}</S.Number>
-      <S.Plus onClick={plus}>+</S.Plus>
+      <S.Plus onClick={plus}>
+        <span className="a11y-hidden">+</span>
+        <Plus />
+      </S.Plus>
     </S.Counter>
   );
 };

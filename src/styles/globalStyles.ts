@@ -29,6 +29,15 @@ const globalStyle = css`
     text-decoration: none;
     color: inherit;
   }
+
+  .a11y-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: polygon(0 0, 0 0, 0 0);
+  }
 `;
 
 const typography = css`

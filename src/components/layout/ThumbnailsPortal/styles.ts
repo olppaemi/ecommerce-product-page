@@ -21,6 +21,7 @@ export const CloseIcon = styled.div`
 
 export const ImageContainer = styled.div`
   margin-bottom: ${rem(40)};
+  position: relative;
 
   img {
     width: 100%;
@@ -61,4 +62,27 @@ export const Thumbnail = styled.li<{ $selected: boolean }>`
         border-radius: ${rem(10)};
       }
     `}
+`;
+
+const Button = styled.button`
+  width: ${rem(56)};
+  height: ${rem(56)};
+  background: ${({ theme }) => theme.colors.white};
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: calc(50% - ${rem(28)});
+`;
+
+export const PrevButton = styled(Button)`
+  left: 0;
+  transform: translateX(-${rem(28)});
+`;
+
+export const NextButton = styled(Button)`
+  right: 0;
+  transform: translateX(${rem(28)});
 `;
