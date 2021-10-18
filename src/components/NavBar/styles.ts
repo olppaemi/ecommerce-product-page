@@ -11,10 +11,10 @@ export const NavBar = styled.div`
 
   padding-top: ${rem(28)};
   padding-bottom: ${rem(34)};
-  border-bottom: none;
+  border-bottom: 1px solid #e4e9f2;
 
-  @media (min-width: ${media.lg}) {
-    border-bottom: 1px solid #e4e9f2;
+  @media (max-width: ${media.md}) {
+    border-bottom: none;
   }
 `;
 

@@ -3,8 +3,11 @@ import media from "styles/media";
 import { rem } from "styles/utils";
 
 export const Container = styled.div<{ $showMenu: boolean }>`
+  margin-left: ${rem(56.5)};
+
   @media (max-width: ${media.md}) {
     display: ${({ $showMenu }) => ($showMenu ? "block" : "none")};
+    margin-left: 0;
   }
 `;
 
@@ -29,8 +32,6 @@ export const CloseIcon = styled.div`
 `;
 
 export const NavContainer = styled.div`
-  margin-left: ${rem(56.5)};
-
   @media (max-width: ${media.md}) {
     margin: 0;
     position: fixed;
@@ -64,4 +65,30 @@ export const NavList = styled.ul`
   }
 `;
 
-export const NavItem = styled.li``;
+export const NavItem = styled.li`
+  position: relative;
+
+  &:hover {
+    &:before {
+      display: block;
+      content: "";
+
+      width: 100%;
+      height: ${rem(4)};
+      background-color: ${({ theme }) => theme.colors.orange};
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translateY(${rem(51)});
+    }
+  }
+
+  @media (max-width: ${media.md}) {
+    &:hover {
+      &:before {
+        display: none;
+      }
+    }
+  }
+`;
