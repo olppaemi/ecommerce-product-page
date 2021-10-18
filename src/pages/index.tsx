@@ -1,5 +1,5 @@
-import NavBar from "components/NavBar";
-import Product from "components/Product";
+import NavBar from "components/layout/NavBar";
+import Product from "components/layout/Product";
 import { NextPage } from "next";
 
 const Home: NextPage = () => {

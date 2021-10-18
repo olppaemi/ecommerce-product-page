@@ -13,6 +13,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Component {...pageProps} />
+        <div id="root-modal"></div>
       </ThemeProvider>
     </>
   );
