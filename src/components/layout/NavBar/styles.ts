@@ -26,6 +26,7 @@ export const Nav = styled.nav`
 
 export const Cart = styled.div`
   cursor: pointer;
+  position: relative;
 `;
 
 export const MenuIcon = styled.div`

@@ -41,6 +41,7 @@ export const NavContainer = styled.div`
     bottom: 0;
     width: ${rem(250)};
     background-color: white;
+    z-index: 50;
 
     padding-top: ${rem(25)};
     padding-left: ${rem(25)};

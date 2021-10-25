@@ -1,5 +1,6 @@
 import { AppProps } from "next/app";
 import Head from "next/head";
+import { CartProvider } from "contexts/CartContext";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "styles/globalStyles";
 import theme from "styles/theme";
@@ -12,8 +13,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Component {...pageProps} />
-        <div id="root-modal"></div>
+        <CartProvider>
+          <Component {...pageProps} />
+          <div id="root-modal"></div>
+        </CartProvider>
       </ThemeProvider>
     </>
   );

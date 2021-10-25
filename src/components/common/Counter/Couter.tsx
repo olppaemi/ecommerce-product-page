@@ -3,9 +3,13 @@ import Plus from "components/icons/Plus";
 import { useState } from "react";
 import * as S from "./styles";
 
-const Couter = () => {
-  const [number, setNumber] = useState(0);
-
+const Couter = ({
+  number,
+  setNumber,
+}: {
+  number: number;
+  setNumber(prev?: number): void;
+}) => {
   const minus = () => setNumber(number > 0 ? number - 1 : 0);
   const plus = () => setNumber(number + 1);
 

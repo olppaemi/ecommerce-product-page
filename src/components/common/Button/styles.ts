@@ -7,7 +7,16 @@ export const Button = styled.button`
   height: ${rem(56)};
   background-color: ${({ theme }) => theme.colors.orange};
   border-radius: ${rem(10)};
+  font-weight: bold;
   color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > * + * {
+    margin-left: ${rem(15.54)};
+  }
 
   @media (max-width: ${media.md}) {
     box-shadow: 0 ${rem(20)} ${rem(50)} ${rem(-20)}

@@ -11,6 +11,7 @@ export const ImageContainer = styled.div`
   width: 100%;
   margin-bottom: ${rem(32)};
   position: relative;
+  z-index: 10;
 
   img {
     width: 100%;

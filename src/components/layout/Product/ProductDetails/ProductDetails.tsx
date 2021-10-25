@@ -1,8 +1,26 @@
 import Button from "components/common/Button";
 import Couter from "components/common/Counter";
+import { useCartContext } from "contexts/CartContext";
+import { Product } from "lib/types";
+import CartWhite from "components/icons/CartWhite";
+import { useState } from "react";
 import * as S from "./styles";
 
 const ProductDetails = () => {
+  const [number, setNumber] = useState(0);
+  const { addToCart } = useCartContext();
+
+  const hanldeAddToCart = () => {
+    const newProduct: Product = {
+      name: "Fall Limited Edition Sneakers",
+      quantity: number,
+      price: 125,
+      image: "images/image-product-1-thumbnail.jpg",
+    };
+    addToCart(newProduct);
+    setNumber(0);
+  };
+
   return (
     <S.Container>
       <S.Wrapper>
@@ -20,8 +38,10 @@ const ProductDetails = () => {
           <h4>$250.00</h4>
         </S.PriceWrapper>
         <S.ButtonGroup>
-          <Couter />
-          <Button>Add to cart</Button>
+          <Couter number={number} setNumber={setNumber} />
+          <Button onClick={hanldeAddToCart}>
+            <CartWhite /> <span>Add to cart</span>
+          </Button>
         </S.ButtonGroup>
       </S.Wrapper>
     </S.Container>
