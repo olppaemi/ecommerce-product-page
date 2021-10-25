@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution URL here]()
+- Solution URL: [Solution URL here](https://www.frontendmentor.io/solutions/responsive-ecommerce-product-page-using-nextjs-and-styledcomponents-JPnu4GR23)
 
 ## My process
 
