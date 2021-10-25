@@ -14,6 +14,10 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
 
+  &:hover {
+    background-color: hsl(26, 100%, 71%);
+  }
+
   & > * + * {
     margin-left: ${rem(15.54)};
   }
